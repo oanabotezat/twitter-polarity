@@ -12,7 +12,12 @@
     <p>AZURE API reference: <a
       href="https://docs.microsoft.com/en-us/azure/cognitive-services/text-analytics/quickstarts/nodejs">https://docs.microsoft.com/en-us/azure/cognitive-services/text-analytics/quickstarts/nodejs</a>
     </p>
+      <h2>find english language tweets <a onclick="window.open('https://twitter.com/hashtag/brexit?lang=en', '_blank')">here</a></h2>
+
+    <textarea v-model="tweet" placeholder="paste an enghlish language tweet please"></textarea>
+
     <h1>#brexit tweet:</h1>
+
     <blockquote :class="polarity">{{ tweet }}</blockquote>
 
     <h3 :class="polarity">
@@ -140,6 +145,11 @@
 
   a {
     color: #42b983;
+  }
+
+  textarea {
+    width: 80%;
+    height: 70px;
   }
 
   blockquote {
