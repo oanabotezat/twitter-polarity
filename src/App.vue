@@ -74,43 +74,27 @@
           .then(function(response) {
             // Success
 
-            console.log('polarity', response.data.documents[0].id === '1');
-
             if (response.data && response.data.documents && response.data.documents[0] && response.data.documents[0].id === '1') {
-
-              console.log('polarity???eee', response.data.documents[0].score);
 
               if (response.data.documents[0].score > 0.5) {
 
-                console.log('wtf');
                 return 'positive';
               }
 
               if (response.data.documents[0].score < 0.5) {
 
-                console.log('wtf negative');
                 return 'negative';
               }
 
-              console.log('wtf neutral');
               return 'neutral';
             }
-
-            console.log('polarity???', response.data);
-
-            return '???';
+            return '';
           }, function(response) {
             // Error
             console.log(response.data)
-          })
-          .then( sentiment => {
-
-            console.log('sentiment', sentiment);
-            return sentiment;
           });
 
 
-        console.log('sentimsssent', sentiment);
         return sentiment;
 
       }
